@@ -20,7 +20,7 @@ public class Poll {
 
     Type type;
 
-    Boolean hidden;
+    boolean hidden;
 
     PreferencesType preferencesType;
 
@@ -29,6 +29,8 @@ public class Poll {
     String locale;
 
     String title;
+
+    String description;
 
     User initiator;
 
@@ -43,6 +45,18 @@ public class Poll {
     Device device;
 
     Levels levels;
+
+    Location location;
+
+    boolean multiDay;
+
+    Integer columnConstraint;
+
+    boolean dateText;
+
+    boolean timeZone;
+
+    Integer rowConstraint;
 
     public String getId() {
         return id;
@@ -140,6 +154,14 @@ public class Poll {
         this.title = title;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public User getInitiator() {
         return initiator;
     }
@@ -194,5 +216,65 @@ public class Poll {
 
     public void setLevels(Levels levels) {
         this.levels = levels;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public boolean isHidden() {
+        return hidden;
+    }
+
+    public void setHidden(boolean hidden) {
+        this.hidden = hidden;
+    }
+
+    public boolean isMultiDay() {
+        return multiDay;
+    }
+
+    public void setMultiDay(boolean multiDay) {
+        this.multiDay = multiDay;
+    }
+
+    public Integer getColumnConstraint() {
+        return columnConstraint;
+    }
+
+    public void setColumnConstraint(Integer columnConstraint) {
+        this.columnConstraint = columnConstraint;
+    }
+
+    public boolean isDateText() {
+        return dateText;
+    }
+
+    public void setDateText(boolean dateText) {
+        this.dateText = dateText;
+    }
+
+    public boolean getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(boolean timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    public boolean isTimeZone() {
+        return timeZone;
+    }
+
+    public Integer getRowConstraint() {
+        return rowConstraint;
+    }
+
+    public void setRowConstraint(Integer rowConstraint) {
+        this.rowConstraint = rowConstraint;
     }
 }
