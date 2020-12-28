@@ -11,4 +11,11 @@ import java.util.List;
 @Repository
 public interface PollRepository extends JpaRepository<Poll, String> {
 
+    @Query("select p from Poll p where p.initiator.email = :email")
+    List<Poll> findByUser(@Param("email") String email);
+
+    List<Poll> findAllByTitle(String title);
+
+    List<Poll> findAllByInitiatedAfter(Long date);
+
 }
