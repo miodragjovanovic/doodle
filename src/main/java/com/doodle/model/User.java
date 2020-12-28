@@ -1,14 +1,19 @@
 package com.doodle.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 
-    String name;
+    private String name;
 
-    String email;
+    @Id
+    private String email;
 
-    boolean notify;
+    private boolean notify;
 
-    String timeZone;
+    private String timeZone;
 
     public String getName() {
         return name;

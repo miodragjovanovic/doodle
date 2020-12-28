@@ -2,61 +2,70 @@ package com.doodle.model;
 
 import com.doodle.enums.*;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Poll {
 
-    String id;
+    @Id
+    private String id;
 
-    String adminKey;
+    private String adminKey;
 
-    Long latestChange;
+    private Long latestChange;
 
-    Long initiated;
+    private Long initiated;
 
-    Integer participantsCount;
+    private Integer participantsCount;
 
-    Integer inviteesCount;
+    private Integer inviteesCount;
 
-    Type type;
+    private Type type;
 
-    boolean hidden;
+    private boolean hidden;
 
-    PreferencesType preferencesType;
+    private PreferencesType preferencesType;
 
-    State state;
+    private State state;
 
-    String locale;
+    private String locale;
 
-    String title;
+    private String title;
 
-    String description;
+    @Column(length = 1000)
+    private String description;
 
-    User initiator;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private User initiator;
 
-    List<Option> options;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Option> options;
 
-    String optionsHash;
+    private String optionsHash;
 
-    List<Participant> participants;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Participant> participants;
 
-    List<User> invitees;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<User> invitees;
 
-    Device device;
+    private Device device;
 
-    Levels levels;
+    private Levels levels;
 
-    Location location;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Location location;
 
-    boolean multiDay;
+    private boolean multiDay;
 
-    Integer columnConstraint;
+    private Integer columnConstraint;
 
-    boolean dateText;
+    private boolean dateText;
 
-    boolean timeZone;
+    private boolean timeZone;
 
-    Integer rowConstraint;
+    private Integer rowConstraint;
 
     public String getId() {
         return id;
@@ -277,4 +286,5 @@ public class Poll {
     public void setRowConstraint(Integer rowConstraint) {
         this.rowConstraint = rowConstraint;
     }
+
 }

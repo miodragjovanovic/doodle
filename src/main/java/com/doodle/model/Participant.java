@@ -1,14 +1,21 @@
 package com.doodle.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
+@Entity
 public class Participant {
 
-    Long id;
+    @Id
+    private Long id;
 
-    String name;
+    private String name;
 
-    List<Integer> preferences;
+    private String preferences;
 
     public Long getId() {
         return id;
@@ -27,10 +34,18 @@ public class Participant {
     }
 
     public List<Integer> getPreferences() {
+        List<Integer> preferences = Arrays.asList(this.preferences.split(","))
+                .stream()
+                .map(value -> Integer.parseInt(value))
+                .collect(Collectors.toList());
+
         return preferences;
     }
 
     public void setPreferences(List<Integer> preferences) {
-        this.preferences = preferences;
+        String values = preferences.stream()
+                .map(pref -> String.valueOf(pref))
+                .collect(Collectors.joining(","));
+        this.preferences = values;
     }
 }

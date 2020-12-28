@@ -1,28 +1,39 @@
 package com.doodle.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.UUID;
+
+@Entity
 public class Option {
 
-    String text;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
 
-    boolean available;
+    private String text;
 
-    Long start;
+    private boolean available;
 
-    Long end;
+    private Long start;
 
-    boolean allday;
+    private Long end;
 
-    Long startDate;
+    private boolean allday;
 
-    Long endDate;
+    private Long startDate;
 
-    Long date;
+    private Long endDate;
 
-    Long startDateTime;
+    private Long date;
 
-    Long endDateTime;
+    private Long startDateTime;
 
-    Long dateTime;
+    private Long endDateTime;
+
+    private Long dateTime;
 
     public String getText() {
         return text;

@@ -1,14 +1,19 @@
 package com.doodle.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Location {
 
-    String name;
+    private String name;
 
-    String address;
+    private String address;
 
-    String countryCode;
+    private String countryCode;
 
-    String locationId;
+    @Id
+    private String locationId;
 
     public String getName() {
         return name;
