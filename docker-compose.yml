@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  doodle:
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    ports:
+      - "8080:9090"

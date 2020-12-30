@@ -35,6 +35,14 @@ public class Option {
 
     private Long dateTime;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
     public String getText() {
         return text;
     }
